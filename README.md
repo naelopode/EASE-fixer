@@ -8,7 +8,7 @@ The add-on simply change the number of requested items to a higher number than t
 ***
 
 <p align="center">
-<a class="install-ok" href="https://github.com/naelopode/EASE-fixer/raw/refs/heads/master/build/ease_fix.xpi"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get EASE-Fix for Firefox"></a>
+<a class="install-ok" href="https://github.com/naelopode/EASE-fixer/releases/download/v1.0.0/ease_fix.xpi"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get EASE-Fix for Firefox"></a>
 </p>
 
 ***
