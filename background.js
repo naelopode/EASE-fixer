@@ -1,5 +1,5 @@
 // Query to change
-const targetUrl = "https://ec.europa.eu/transparency/documents-request/api/portal/request/all";
+const targetUrl_ec = "https://ec.europa.eu/transparency/documents-request/api/portal/request/all";
 
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
@@ -23,7 +23,33 @@ chrome.webRequest.onBeforeRequest.addListener(
     return { redirectUrl: url.toString() };
   },
   {
-    urls: [targetUrl + "*"], // Match the rest
+    urls: [targetUrl_ec + "*"], // Match the rest
+  },
+  ["blocking"]
+);
+
+const targetUrl_ep = "https://www.europarl.europa.eu/meps/en/search-meetings";
+
+chrome.webRequest.onBeforeRequest.addListener(
+  function (details) {
+    let url = new URL(details.url);
+    if (url.searchParams.get("modifiedByAddon") === "true") {
+      return {};
+    }
+
+    // Replace "+" with "%20" in the query string
+    url.searchParams.forEach((value, key) => {
+      url.searchParams.set(key, encodeURIComponent(value));
+    });
+    
+    // avoid infitie loop, simple fix
+    url.searchParams.append("modifiedByAddon", "true");
+
+    // Redirect
+    return { redirectUrl: url.toString() };
+  },
+  {
+    urls: [targetUrl_ep + "*"], // Match the rest
   },
   ["blocking"]
 );

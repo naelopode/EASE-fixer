@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
-    "name": "EC Transparency Fix",
-    "version": "1.0",
-    "description": "Modifies size query parameter in GET requests to EC Transparency API.",
+    "name": "EU Portal Fix",
+    "version": "1.1",
+    "description": "Fix issues with Modifies size query parameter in GET requests to EC Transparency API.",
     "permissions": [
       "webRequest",
       "webRequestBlocking",
-      "https://ec.europa.eu/"
+      "https://*.europa.eu/"
     ],
     "background": {
       "scripts": ["background.js"]
